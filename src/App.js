@@ -10,6 +10,7 @@ function App() {
       <div className="black-nav">
         <h4>ReactBlog</h4>
       </div>
+      <button>글 수정</button>
       <div className="list">
         <h4>
           {글제목[0]}
