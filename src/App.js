@@ -15,7 +15,7 @@ function App() {
       <div className="black-nav">
         <h4>ReactBlog</h4>
       </div>
-      <button
+      {/* <button
         onClick={() => {
           let copy = [...글제목];
           copy.sort();
@@ -52,7 +52,15 @@ function App() {
         <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
-      {modal ? <Modal /> : null}
+      {modal ? <Modal /> : null} */}
+      {글제목.map((title, i) => {
+        return (
+          <div className="list">
+            <h4>{글제목[i]}</h4>
+            <p>2월 17일 발행</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
