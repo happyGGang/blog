@@ -34,7 +34,11 @@ function App() {
         글 수정
       </button>
       <div className="list">
-        <h4>
+        <h4
+          onClick={() => {
+            setModal(!modal);
+          }}
+        >
           {글제목[0]}
           <span onClick={() => 따봉변경(따봉 + 1)}>👍</span> {따봉}
         </h4>
@@ -45,13 +49,7 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4
-          onClick={() => {
-            setModal(true);
-          }}
-        >
-          {글제목[2]}
-        </h4>
+        <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
       {modal ? <Modal /> : null}
