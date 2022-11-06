@@ -8,6 +8,7 @@ function App() {
     "파이썬 독학",
   ]);
   let [따봉, 따봉변경] = useState(0);
+  let [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -44,10 +45,16 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{글제목[2]}</h4>
+        <h4
+          onClick={() => {
+            setModal(true);
+          }}
+        >
+          {글제목[2]}
+        </h4>
         <p>2월 17일 발행</p>
       </div>
-      <Modal></Modal>
+      {modal ? <Modal /> : null}
     </div>
   );
 }
