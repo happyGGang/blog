@@ -9,6 +9,7 @@ function App() {
   ]);
   let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
+  let [title, setTitle] = useState(0);
 
   return (
     <div className="App">
@@ -58,6 +59,7 @@ function App() {
             <h4
               onClick={() => {
                 setModal(!modal);
+                setTitle(i);
               }}
             >
               {글제목[i]}
@@ -77,7 +79,12 @@ function App() {
         );
       })}
       {modal ? (
-        <Modal 글제목={글제목} color={"skyblue"} 글제목변경={글제목변경} />
+        <Modal
+          글제목={글제목}
+          color={"skyblue"}
+          글제목변경={글제목변경}
+          title={title}
+        />
       ) : null}
     </div>
   );
@@ -86,12 +93,14 @@ function App() {
 function Modal(props) {
   return (
     <div className="modal" style={{ background: props.color }}>
-      <h4>{props.글제목[0]}</h4>
+      <h4>{props.글제목[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
       <button
         onClick={() => {
-          props.글제목변경(["여자코트 추천", "강남 우동 맛집", "파이썬 독학"]);
+          let copy = [...props.글제목];
+          copy[0] = "여자코트 추천";
+          props.글제목변경(copy);
         }}
       >
         글수정
