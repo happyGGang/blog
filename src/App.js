@@ -76,7 +76,9 @@ function App() {
           </div>
         );
       })}
-      {modal ? <Modal 글제목={글제목} color={"skyblue"} /> : null}
+      {modal ? (
+        <Modal 글제목={글제목} color={"skyblue"} 글제목변경={글제목변경} />
+      ) : null}
     </div>
   );
 }
@@ -87,6 +89,13 @@ function Modal(props) {
       <h4>{props.글제목[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
+      <button
+        onClick={() => {
+          props.글제목변경(["여자코트 추천", "강남 우동 맛집", "파이썬 독학"]);
+        }}
+      >
+        글수정
+      </button>
     </div>
   );
 }
