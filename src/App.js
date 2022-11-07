@@ -52,7 +52,6 @@ function App() {
         <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
       </div> */}
-      {modal ? <Modal /> : null}
       {글제목.map((title, i) => {
         return (
           <div className="list">
@@ -77,6 +76,7 @@ function App() {
           </div>
         );
       })}
+      {modal ? <Modal /> : null}
     </div>
   );
 }
