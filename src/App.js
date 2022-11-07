@@ -7,7 +7,7 @@ function App() {
     "강남우동 맛집",
     "파이썬 독학",
   ]);
-  let [따봉, 따봉변경] = useState(0);
+  let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
 
   return (
@@ -51,12 +51,28 @@ function App() {
       <div className="list">
         <h4>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
-      </div>
-      {modal ? <Modal /> : null} */}
+      </div> */}
+      {modal ? <Modal /> : null}
       {글제목.map((title, i) => {
         return (
           <div className="list">
-            <h4>{글제목[i]}</h4>
+            <h4
+              onClick={() => {
+                setModal(!modal);
+              }}
+            >
+              {글제목[i]}
+            </h4>
+            <span
+              onClick={() => {
+                let copy = [...따봉];
+                copy[i] = copy[i] + 1;
+                따봉변경(copy);
+              }}
+            >
+              👍
+            </span>{" "}
+            {따봉[i]}
             <p>2월 17일 발행</p>
           </div>
         );
