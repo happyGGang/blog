@@ -10,6 +10,7 @@ function App() {
   let [따봉, 따봉변경] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
   let [title, setTitle] = useState(0);
+  let [입력값, 입력값변경] = useState("");
 
   return (
     <div className="App">
@@ -78,7 +79,11 @@ function App() {
           </div>
         );
       })}
-      <input onChange={() => {}} />
+      <input
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+      />
       {modal ? (
         <Modal
           글제목={글제목}
