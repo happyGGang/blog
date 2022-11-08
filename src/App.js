@@ -78,6 +78,7 @@ function App() {
           </div>
         );
       })}
+      <input onChange={() => {}} />
       {modal ? (
         <Modal
           글제목={글제목}
