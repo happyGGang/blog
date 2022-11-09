@@ -84,6 +84,7 @@ function App() {
           console.log(e.target.value);
         }}
       />
+      <button onClick={() => {}}>글발행</button>
       {modal ? (
         <Modal
           글제목={글제목}
