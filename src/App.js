@@ -81,10 +81,18 @@ function App() {
       })}
       <input
         onChange={(e) => {
-          console.log(e.target.value);
+          입력값변경(e.target.value);
         }}
       />
-      <button onClick={() => {}}>글발행</button>
+      <button
+        onClick={() => {
+          let copy = [...글제목];
+          copy.unshift(입력값);
+          글제목변경(copy);
+        }}
+      >
+        글발행
+      </button>
       {modal ? (
         <Modal
           글제목={글제목}
