@@ -79,7 +79,7 @@ function App() {
             <button
               onClick={() => {
                 let copy = [...글제목];
-                copy.splice(0, 1);
+                copy.splice(i, 1);
                 글제목변경(copy);
               }}
             >
